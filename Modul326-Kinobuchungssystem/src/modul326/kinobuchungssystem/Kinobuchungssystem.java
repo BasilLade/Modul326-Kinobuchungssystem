@@ -10,5 +10,5 @@ package modul326.kinobuchungssystem;
  * @author Timothe
  */
 public class Kinobuchungssystem {
-    
+    private int naechsteBuchungsnummer;
 }

@@ -10,5 +10,7 @@ package modul326.kinobuchungssystem;
  * @author Timothe
  */
 public class Vorstellung {
-    
+    public String filmName;
+    public String datum;
+    public String zeit;
 }

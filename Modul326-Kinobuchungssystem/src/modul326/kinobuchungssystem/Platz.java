@@ -9,6 +9,13 @@ package modul326.kinobuchungssystem;
  *
  * @author Timothe
  */
+
 public class Platz {
+    public enum platzStatus {
+        FREI, RESERVIERT, VERKAUFT
+    }
+    
+    public int platzNr;
+    public int reservierungsNr;
     
 }

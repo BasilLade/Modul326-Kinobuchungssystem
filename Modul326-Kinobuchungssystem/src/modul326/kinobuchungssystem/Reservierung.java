@@ -10,5 +10,6 @@ package modul326.kinobuchungssystem;
  * @author Timothe
  */
 public class Reservierung {
-    
+    public int reservierungsNr;
+    public String telefonNummer;
 }
