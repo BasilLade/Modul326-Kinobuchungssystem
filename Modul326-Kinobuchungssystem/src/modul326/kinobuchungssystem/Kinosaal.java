@@ -11,4 +11,7 @@ package modul326.kinobuchungssystem;
  */
 public class Kinosaal {
     public String Name;
+    public void liefereReihen(){
+        
+    }
 }

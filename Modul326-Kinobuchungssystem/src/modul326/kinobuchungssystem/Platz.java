@@ -18,4 +18,20 @@ public class Platz {
     public int platzNr;
     public int reservierungsNr;
     
+    public void lieferePlatzNR(){
+        
+    }
+    public void istPlatzFrei(){
+        
+    }
+    public void istPlatzVerkauft(){
+        
+    }
+    public void reservierePlatz(){
+        
+    }
+    public void verkaufePlatz(){
+        
+    }
+    
 }

@@ -11,4 +11,16 @@ package modul326.kinobuchungssystem;
  */
 public class Kinobuchungssystem {
     private int naechsteBuchungsnummer;
+    public void findeVorstellung(){
+        
+    }
+    public void zeigeVorstellung(){
+        
+    }
+    public void acceptiereReservierung(){
+        
+    }
+    public void liefereBuchung(){
+        
+    }
 }

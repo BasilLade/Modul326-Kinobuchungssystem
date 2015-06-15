@@ -13,4 +13,8 @@ public class Vorstellung {
     public String filmName;
     public String datum;
     public String zeit;
+    
+    public void liefereKinosaal(){
+        
+    }
 }

@@ -11,4 +11,8 @@ package modul326.kinobuchungssystem;
  */
 public class Reihe {
     public int reihenNr;
+    
+    public void lieferePlätze(){
+        
+    }
 }
