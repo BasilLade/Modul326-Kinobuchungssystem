@@ -10,7 +10,12 @@ package modul326.kinobuchungssystem;
  * @author Timothe
  */
 public class Kinosaal {
-    public String Name;
+    public int nummer;
+
+    public Kinosaal(int nummer) {
+        this.nummer = nummer;
+    }
+    
     public void liefereReihen(){
         
     }

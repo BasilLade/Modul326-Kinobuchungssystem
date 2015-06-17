@@ -16,28 +16,38 @@ public class Platz {
     public enum platzStatus {
         FREI, RESERVIERT, VERKAUFT
     }
-    
+    public platzStatus stat;
     public int platzNr;
     public int reservierungsNr;
-    
     public Platz(int platzNr) {
         this.platzNr = platzNr;
      
     }
-    public void lieferePlatzNR(){
-        
+    
+
+    public int lieferePlatzNR() {
+        return platzNr;
     }
-    public void istPlatzFrei(){
-        
+    
+    public boolean istPlatzFrei(){
+        if(stat.equals(platzStatus.FREI)){
+            return true;
+        } else {
+            return false;
+        }
     }
-    public void istPlatzVerkauft(){
-        
+    public boolean istPlatzVerkauft(){
+        if(stat.equals(platzStatus.VERKAUFT)){
+            return true;
+        } else {
+            return false;
+        }
     }
     public void reservierePlatz(){
-        
+        this.stat = platzStatus.RESERVIERT;
     }
     public void verkaufePlatz(){
-        
+        this.stat = platzStatus.VERKAUFT;
     }
     
 }
