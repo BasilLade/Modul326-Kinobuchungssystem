@@ -10,8 +10,14 @@ package modul326.kinobuchungssystem;
  * @author Timothe
  */
 public class Reihe {
+
+   
     public int reihenNr;
     
+    
+     public Reihe(int reihenNr) {
+        this.reihenNr = reihenNr;
+    }
     public void lieferePlätze(){
         
     }

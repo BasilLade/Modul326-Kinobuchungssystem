@@ -11,8 +11,15 @@ package modul326.kinobuchungssystem;
  */
 public class Reservierung {
     public int reservierungsNr;
+
+    
     public String telefonNummer;
     
+    
+    public Reservierung(int reservierungsNr, String telefonNummer) {
+        this.reservierungsNr = reservierungsNr;
+        this.telefonNummer = telefonNummer;
+    }
     public void Reserviere(){
         
     }

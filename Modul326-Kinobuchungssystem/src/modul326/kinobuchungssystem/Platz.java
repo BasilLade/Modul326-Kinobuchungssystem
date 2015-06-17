@@ -11,6 +11,8 @@ package modul326.kinobuchungssystem;
  */
 
 public class Platz {
+
+   
     public enum platzStatus {
         FREI, RESERVIERT, VERKAUFT
     }
@@ -18,6 +20,10 @@ public class Platz {
     public int platzNr;
     public int reservierungsNr;
     
+    public Platz(int platzNr) {
+        this.platzNr = platzNr;
+     
+    }
     public void lieferePlatzNR(){
         
     }

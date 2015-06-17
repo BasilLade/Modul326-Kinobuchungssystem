@@ -5,22 +5,33 @@
  */
 package modul326.kinobuchungssystem;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Timothe
  */
 public class Kinobuchungssystem {
     private int naechsteBuchungsnummer;
-    public void findeVorstellung(){
-        
+    private ArrayList<Vorstellung> filme = new ArrayList<Vorstellung>();
+    private ArrayList<Reservierung> res = new ArrayList<Reservierung>();
+    
+    
+    public void filmMachen(String filmName, String datum, String zeit,Kinosaal saal){
+        Vorstellung film = new Vorstellung(filmName,datum,zeit,saal);
+        filme.add(film);
     }
-    public void zeigeVorstellung(){
-        
+ 
+
+    public Vorstellung zeigeVorstellung(int a){
+       return filme.get(a);
     }
-    public void acceptiereReservierung(){
-        
+    public void machReservierung(int reservierungsNr, String telefonNummer){
+        Reservierung lel = new Reservierung( reservierungsNr,  telefonNummer);
+        res.add(lel);
     }
-    public void liefereBuchung(){
-        
+       public int liefereBuchung() {
+        return naechsteBuchungsnummer;
     }
+ 
 }
