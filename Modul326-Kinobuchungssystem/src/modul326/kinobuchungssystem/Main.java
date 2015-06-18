@@ -32,9 +32,15 @@ public class Main {
          Platz platz6 = new Platz(6);
          Platz platz7 = new Platz(7);
          Platz platz8 = new Platz(8);
-
-         Vorstellung film1 = new Vorstellung("derp","derp","derp",saal1);
-         Vorstellung film2 = new Vorstellung("derp","derp","derp",saal2);
+         
+         Kinobuchungssystem system = new Kinobuchungssystem();
+         
+         system.filmMachen("derp","derp","derp", saal2);
+         system.filmMachen("derp","derp","derp", saal1);
+         
+         system.machReservierung(1, "078 790 23 77");
+         system.machReservierung(2, "078 790 23 74");
+  
         
     }
     
