@@ -5,6 +5,8 @@
  */
 package modul326.kinobuchungssystem;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Timothe
@@ -13,12 +15,15 @@ public class Reihe {
 
    
     public int reihenNr;
+    public ArrayList<Platz> platz = new ArrayList<Platz>();
     
-    
-     public Reihe(int reihenNr) {
+    public Reihe(int reihenNr) {
         this.reihenNr = reihenNr;
     }
-    public void lieferePlätze(){
-        
+     public void ReiheEinfuegen(Platz a){
+        this.platz.add(a);
+    }
+    public ArrayList<Platz> lieferePlätze(){
+        return this.platz;
     }
 }

@@ -19,6 +19,8 @@ public class Platz {
     public platzStatus stat;
     public int platzNr;
     public int reservierungsNr;
+    
+    
     public Platz(int platzNr) {
         this.platzNr = platzNr;
      

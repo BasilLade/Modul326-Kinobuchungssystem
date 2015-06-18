@@ -20,7 +20,6 @@ public class Reservierung {
         this.reservierungsNr = reservierungsNr;
         this.telefonNummer = telefonNummer;
     }
-    public void Reserviere(){
-        
-    }
+
+    
 }

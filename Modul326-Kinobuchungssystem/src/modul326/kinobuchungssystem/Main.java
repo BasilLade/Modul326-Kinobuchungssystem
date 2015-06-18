@@ -41,7 +41,11 @@ public class Main {
          system.machReservierung(1, "078 790 23 77");
          system.machReservierung(2, "078 790 23 74");
   
-        
+         saal1.ReiheEinfuegen(reihe1);
+         saal1.ReiheEinfuegen(reihe2);
+         saal2.ReiheEinfuegen(reihe3);
+         saal2.ReiheEinfuegen(reihe4);
+         
     }
     
 }  
