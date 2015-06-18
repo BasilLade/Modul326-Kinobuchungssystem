@@ -46,6 +46,17 @@ public class Main {
          saal2.ReiheEinfuegen(reihe3);
          saal2.ReiheEinfuegen(reihe4);
          
+        reihe1.PlatzEinfuegen(platz1);
+        reihe1.PlatzEinfuegen(platz2);
+        reihe2.PlatzEinfuegen(platz3);
+        reihe2.PlatzEinfuegen(platz4);
+        reihe3.PlatzEinfuegen(platz5);
+        reihe3.PlatzEinfuegen(platz6);
+        reihe4.PlatzEinfuegen(platz7);
+        reihe4.PlatzEinfuegen(platz8);
+        
+    
+         
     }
     
 }  

@@ -20,7 +20,7 @@ public class Reihe {
     public Reihe(int reihenNr) {
         this.reihenNr = reihenNr;
     }
-     public void ReiheEinfuegen(Platz a){
+     public void PlatzEinfuegen(Platz a){
         this.platz.add(a);
     }
     public ArrayList<Platz> lieferePlätze(){
