@@ -53,12 +53,16 @@ public class Kinobuchungssystem {
          machReservierung(1, "078 790 23 77",platz1);
          machReservierung(2, "078 790 23 74",platz5);
          
-         checkReserviert(platz1,platz2,platz3,platz4,platz5,platz6,platz7,platz8);
+         kaufPlatz(platz2);
+         kaufPlatz(platz3);
+         
+         
+         checkPlätze(platz1,platz2,platz3,platz4,platz5,platz6,platz7,platz8);
     }
     
     
     
-    public void checkReserviert(Platz platz1,Platz platz2,Platz platz3,Platz platz4,Platz platz5,Platz platz6,Platz platz7,Platz platz8){
+    public void checkPlätze(Platz platz1,Platz platz2,Platz platz3,Platz platz4,Platz platz5,Platz platz6,Platz platz7,Platz platz8){
         if(platz1.istPlatzReserviert()){
              System.out.println("Platz 1 ist reserviert");
          }
@@ -83,7 +87,54 @@ public class Kinobuchungssystem {
         if(platz8.istPlatzReserviert()){
              System.out.println("Platz 8 ist reserviert");
          }
-        
+        if(platz1.istPlatzVerkauft()){
+             System.out.println("Platz 1 ist Verkauft");
+         }
+        if(platz2.istPlatzVerkauft()){
+             System.out.println("Platz 2 ist Verkauft");
+         }
+        if(platz3.istPlatzVerkauft()){
+             System.out.println("Platz 3 ist Verkauft");
+         }
+        if(platz4.istPlatzVerkauft()){
+             System.out.println("Platz 4 ist Verkauft");
+         }
+        if(platz5.istPlatzVerkauft()){
+             System.out.println("Platz 5 ist Verkauft");
+         }
+        if(platz6.istPlatzVerkauft()){
+             System.out.println("Platz 6 ist Verkauft");
+         }
+        if(platz7.istPlatzVerkauft()){
+             System.out.println("Platz 7 ist Verkauft");
+         }
+        if(platz8.istPlatzVerkauft()){
+             System.out.println("Platz 8 ist Verkauft");
+         }
+        if(platz1.istPlatzFrei()){
+             System.out.println("Platz 1 ist Frei");
+         }
+        if(platz2.istPlatzFrei()){
+             System.out.println("Platz 2 ist Frei");
+         }
+        if(platz3.istPlatzFrei()){
+             System.out.println("Platz 3 ist Frei");
+         }
+        if(platz4.istPlatzFrei()){
+             System.out.println("Platz 4 ist Frei");
+         }
+        if(platz5.istPlatzFrei()){
+             System.out.println("Platz 5 ist Frei");
+         }
+        if(platz6.istPlatzFrei()){
+             System.out.println("Platz 6 ist Frei");
+         }
+        if(platz7.istPlatzFrei()){
+             System.out.println("Platz 7 ist Frei");
+         }
+        if(platz8.istPlatzFrei()){
+             System.out.println("Platz 8 ist Frei");
+         }
         
     }
     
@@ -96,12 +147,18 @@ public class Kinobuchungssystem {
     public Vorstellung zeigeVorstellung(int a){
        return filme.get(a);
     }
+    
     public void machReservierung(int reservierungsNr, String telefonNummer, Platz p){
         Reservierung lel = new Reservierung( reservierungsNr,  telefonNummer, p);
         res.add(lel);
     }
-       public int liefereBuchung() {
+    
+    public int liefereBuchungNummer() {
         return naechsteBuchungsnummer;
+    }
+    
+    public void kaufPlatz(Platz p){
+        p.verkaufePlatz();
     }
  
 }
