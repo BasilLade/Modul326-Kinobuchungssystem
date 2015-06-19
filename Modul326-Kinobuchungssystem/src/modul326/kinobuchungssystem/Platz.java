@@ -56,6 +56,9 @@ public class Platz {
     public void reservierePlatz(){
         this.stat = platzStatus.RESERVIERT;
     }
+    public void freiePlatz(){
+        this.stat = platzStatus.FREI;
+    }
     public void verkaufePlatz(){
         this.stat = platzStatus.VERKAUFT;
     }

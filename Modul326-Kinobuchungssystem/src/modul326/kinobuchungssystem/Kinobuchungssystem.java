@@ -153,12 +153,27 @@ public class Kinobuchungssystem {
         res.add(lel);
     }
     
+    public void ändereReservierung(int reservierungsNr, String telefonNummer, Platz alt,Platz neu,int n){
+        alt.freiePlatz();
+        Reservierung lel = new Reservierung( reservierungsNr,  telefonNummer, neu);
+        res.set(n,lel);
+        
+    }
+    public void storniereReservierung(Platz alt,int n){
+        alt.freiePlatz();
+        res.remove(n);
+        
+    }
+    
     public int liefereBuchungNummer() {
         return naechsteBuchungsnummer;
     }
     
     public void kaufPlatz(Platz p){
-        p.verkaufePlatz();
+        if(!p.istPlatzVerkauft()){
+            p.verkaufePlatz();
+        }
+        
     }
  
 }
