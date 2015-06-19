@@ -38,6 +38,13 @@ public class Platz {
             return false;
         }
     }
+    public boolean istPlatzReserviert(){
+        if(stat.equals(platzStatus.RESERVIERT)){
+            return true;
+        } else {
+            return false;
+        }
+    }
     public boolean istPlatzVerkauft(){
         if(stat.equals(platzStatus.VERKAUFT)){
             return true;

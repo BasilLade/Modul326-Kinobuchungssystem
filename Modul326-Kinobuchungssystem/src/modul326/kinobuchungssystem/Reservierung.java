@@ -16,9 +16,10 @@ public class Reservierung {
     public String telefonNummer;
     
     
-    public Reservierung(int reservierungsNr, String telefonNummer) {
+    public Reservierung(int reservierungsNr, String telefonNummer,Platz p) {
         this.reservierungsNr = reservierungsNr;
         this.telefonNummer = telefonNummer;
+        p.reservierePlatz();
     }
 
     
