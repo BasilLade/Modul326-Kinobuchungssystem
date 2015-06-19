@@ -53,14 +53,39 @@ public class Kinobuchungssystem {
          machReservierung(1, "078 790 23 77",platz1);
          machReservierung(2, "078 790 23 74",platz5);
          
-         if(platz1.istPlatzReserviert()){
-             System.out.println("a");
-         }
+         checkReserviert(platz1,platz2,platz3,platz4,platz5,platz6,platz7,platz8);
     }
     
     
     
-    
+    public void checkReserviert(Platz platz1,Platz platz2,Platz platz3,Platz platz4,Platz platz5,Platz platz6,Platz platz7,Platz platz8){
+        if(platz1.istPlatzReserviert()){
+             System.out.println("Platz 1 ist reserviert");
+         }
+        if(platz2.istPlatzReserviert()){
+             System.out.println("Platz 2 ist reserviert");
+         }
+        if(platz3.istPlatzReserviert()){
+             System.out.println("Platz 3 ist reserviert");
+         }
+        if(platz4.istPlatzReserviert()){
+             System.out.println("Platz 4 ist reserviert");
+         }
+        if(platz5.istPlatzReserviert()){
+             System.out.println("Platz 5 ist reserviert");
+         }
+        if(platz6.istPlatzReserviert()){
+             System.out.println("Platz 6 ist reserviert");
+         }
+        if(platz7.istPlatzReserviert()){
+             System.out.println("Platz 7 ist reserviert");
+         }
+        if(platz8.istPlatzReserviert()){
+             System.out.println("Platz 8 ist reserviert");
+         }
+        
+        
+    }
     
     public void filmMachen(String filmName, String datum, String zeit,Kinosaal saal){
         Vorstellung film = new Vorstellung(filmName,datum,zeit,saal);

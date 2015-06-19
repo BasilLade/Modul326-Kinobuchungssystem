@@ -22,6 +22,7 @@ public class Platz {
     
     
     public Platz(int platzNr) {
+        this.stat = platzStatus.FREI;
         this.platzNr = platzNr;
      
     }
