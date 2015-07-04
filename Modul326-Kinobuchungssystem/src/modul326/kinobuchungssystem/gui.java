@@ -68,7 +68,6 @@ public class gui extends javax.swing.JFrame {
         });
 
         movieName.setText("Name");
-
         movieDate.setText("Datum");
 
         movieDauer.setText("Dauer");

@@ -1,6 +1,8 @@
 package modul326.kinobuchungssystem;
 
 import java.util.ArrayList;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 /**
  *
@@ -124,25 +126,31 @@ public class Kinobuchungssystem {
     }
 
     public void checkPlaetze() {
+        JFrame popUp = new JFrame();
+        JLabel text = new JLabel("<html>");
         for (Kinosaal saal : saele) {
-            System.out.println("Saal " + saal.nummer + ": ");
+            text.setText(text.getText() + "Saal " + saal.nummer + ": <br>");
             for (Reihe reihe : saal.reihe) {
-                System.out.print(reihe.reihenNr + ": ");
+                text.setText(text.getText() + reihe.reihenNr + ": ");
                 for (Platz platz : reihe.lieferePlätze()) {
                     if (platz.istPlatzFrei()) {
-                        System.out.print("[ ]");
+                        text.setText(text.getText() + "[ ]");
                     } else if (platz.istPlatzReserviert()) {
-                        System.out.print("[-]");
+                        text.setText(text.getText() + "[-]");
                     } else if (platz.istPlatzVerkauft()) {
-                        System.out.print("[X]");
+                        text.setText(text.getText() + "[X]");
                     } else {
-                        System.err.print("[ERROR]");
+                        text.setText(text.getText() + "[ERROR]");
                     }
                 }
-                System.out.println("");
+                text.setText(text.getText() + "<br>");
             }
-        System.out.println("");
+            text.setText(text.getText() + "<br>");
         }
+        text.setText(text.getText() + "</html>");
+        popUp.add(text);
+        popUp.setVisible(true);
+        popUp.pack();
     }
 
     public void filmMachen(String filmName, String datum, String zeit, Kinosaal saal) {
@@ -155,14 +163,20 @@ public class Kinobuchungssystem {
     }
 
     public void zeigeAlleVorstellung() {
+        JFrame popUp = new JFrame();
+        JLabel text = new JLabel("<html>");
         for (Vorstellung film : filme) {
-            System.out.print("Film: ");
-            System.out.print(film.filmName + ", ");
-            System.out.print(film.datum + ", ");
-            System.out.print(film.zeit + ", ");
-            System.out.print("Saal " + film.saal.nummer);
-            System.out.println("");
+            text.setText(text.getText() + "Film: ");
+            text.setText(text.getText() + film.filmName + ", ");
+            text.setText(text.getText() + film.datum + ", ");
+            text.setText(text.getText() + film.zeit + ", ");
+            text.setText(text.getText() + "Saal " + film.saal.nummer);
+            text.setText(text.getText() + "<br>");
         }
+        text.setText(text.getText() + "</html>");
+        popUp.add(text);
+        popUp.setVisible(true);
+        popUp.pack();
     }
 
     public void machReservierung(int reservierungsNr, String telefonNummer, Platz p) {
