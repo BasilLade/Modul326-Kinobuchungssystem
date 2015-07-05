@@ -40,11 +40,7 @@ public class NewJFrame extends javax.swing.JFrame {
         liefereBuchungNummerButton = new javax.swing.JButton();
         checkPlaetzeButton = new javax.swing.JButton();
         zeigeAlleVorstellungButton = new javax.swing.JButton();
-        movieSaal1 = new javax.swing.JComboBox();
-        movieSaal2 = new javax.swing.JComboBox();
-        movieSaal3 = new javax.swing.JComboBox();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        buyPlaceTakePlatz = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -124,30 +120,12 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
-        movieSaal1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2", "3", "4", "5", "6" }));
-        movieSaal1.addActionListener(new java.awt.event.ActionListener() {
+        buyPlaceTakePlatz.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2", "3", "4", "5", "6" }));
+        buyPlaceTakePlatz.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                movieSaal1ActionPerformed(evt);
+                buyPlaceTakePlatzActionPerformed(evt);
             }
         });
-
-        movieSaal2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2", "3", "4", "5", "6" }));
-        movieSaal2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                movieSaal2ActionPerformed(evt);
-            }
-        });
-
-        movieSaal3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2", "3", "4", "5", "6" }));
-        movieSaal3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                movieSaal3ActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("Saal:");
-
-        jLabel2.setText("Reihe:");
 
         jLabel3.setText("Platz: ");
 
@@ -157,29 +135,19 @@ public class NewJFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(movieName, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(movieSaal2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(movieName, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(9, 9, 9)
                         .addComponent(movieDate, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(movieDauer, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(movieSaal, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(movieSaal1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(movieSaal3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(buyPlaceTakePlatz, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(zeigeAlleVorstellungButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -217,11 +185,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(kaufPlatzButton)
-                    .addComponent(movieSaal3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(movieSaal2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(movieSaal1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buyPlaceTakePlatz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -261,18 +225,10 @@ public class NewJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_zeigeAlleVorstellungButtonActionPerformed
 
-    private void movieSaal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_movieSaal1ActionPerformed
+    private void buyPlaceTakePlatzActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyPlaceTakePlatzActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_movieSaal1ActionPerformed
-
-    private void movieSaal2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_movieSaal2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_movieSaal2ActionPerformed
-
-    private void movieSaal3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_movieSaal3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_movieSaal3ActionPerformed
-
+    }//GEN-LAST:event_buyPlaceTakePlatzActionPerformed
+   
     /**
      * @param args the command line arguments
      */
@@ -310,10 +266,9 @@ public class NewJFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton aendereReservierungButton;
+    private javax.swing.JComboBox buyPlaceTakePlatz;
     private javax.swing.JButton checkPlaetzeButton;
     private javax.swing.JButton filmMachenButton;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSpinner jSpinner1;
@@ -324,9 +279,6 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField movieDauer;
     private javax.swing.JTextField movieName;
     private javax.swing.JComboBox movieSaal;
-    private javax.swing.JComboBox movieSaal1;
-    private javax.swing.JComboBox movieSaal2;
-    private javax.swing.JComboBox movieSaal3;
     private javax.swing.JButton storniereReservierungButton;
     private javax.swing.JButton zeigeAlleVorstellungButton;
     // End of variables declaration//GEN-END:variables

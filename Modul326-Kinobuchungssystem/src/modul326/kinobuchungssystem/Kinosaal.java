@@ -19,6 +19,10 @@ public class Kinosaal {
         this.nummer = nummer;
     }
     
+    public String getNummer() {
+        return "" + this.nummer;
+    }
+    
     public void ReiheEinfuegen(Reihe a){
         this.reihe.add(a);
     }

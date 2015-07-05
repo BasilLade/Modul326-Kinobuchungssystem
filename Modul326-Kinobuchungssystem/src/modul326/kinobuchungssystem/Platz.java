@@ -27,6 +27,13 @@ public class Platz {
      
     }
     
+    public String getPlatzNRWithNull() {
+        if(platzNr < 10) {
+            return "0" + platzNr;
+        } else {
+            return "" + platzNr;
+        }
+    }
 
     public int lieferePlatzNR() {
         return platzNr;
@@ -53,13 +60,13 @@ public class Platz {
             return false;
         }
     }
-    public void reservierePlatz(){
+    public void setPlatzToReserviert(){
         this.stat = platzStatus.RESERVIERT;
     }
-    public void freiePlatz(){
+    public void setPlatzToFrei(){
         this.stat = platzStatus.FREI;
     }
-    public void verkaufePlatz(){
+    public void setPlatzToVerkauft(){
         this.stat = platzStatus.VERKAUFT;
     }
     

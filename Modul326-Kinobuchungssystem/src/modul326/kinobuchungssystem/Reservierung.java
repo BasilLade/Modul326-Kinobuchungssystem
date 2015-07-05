@@ -19,7 +19,7 @@ public class Reservierung {
     public Reservierung(int reservierungsNr, String telefonNummer,Platz p) {
         this.reservierungsNr = reservierungsNr;
         this.telefonNummer = telefonNummer;
-        p.reservierePlatz();
+        p.setPlatzToReserviert();
     }
 
     

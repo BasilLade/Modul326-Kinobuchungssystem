@@ -6,7 +6,7 @@ import javax.swing.JLabel;
 
 /**
  *
- * @author Timothe
+ * @author Timothe & Fabian
  */
 public class Kinobuchungssystem {
 
@@ -125,6 +125,9 @@ public class Kinobuchungssystem {
 
     }
 
+    /**
+     *  Made by Fabian Gysel
+     */
     public void checkPlaetze() {
         JFrame popUp = new JFrame();
         JLabel text = new JLabel("<html>");
@@ -134,11 +137,11 @@ public class Kinobuchungssystem {
                 text.setText(text.getText() + reihe.reihenNr + ": ");
                 for (Platz platz : reihe.lieferePlätze()) {
                     if (platz.istPlatzFrei()) {
-                        text.setText(text.getText() + "[ ]");
+                        text.setText(text.getText() + "<font color='green'>["+platz.getPlatzNRWithNull()+"]</font>");
                     } else if (platz.istPlatzReserviert()) {
-                        text.setText(text.getText() + "[-]");
+                        text.setText(text.getText() + "<font color='orange'>["+platz.getPlatzNRWithNull()+"]</font>");
                     } else if (platz.istPlatzVerkauft()) {
-                        text.setText(text.getText() + "[X]");
+                        text.setText(text.getText() + "<font color='red'>["+platz.getPlatzNRWithNull()+"]</font>");
                     } else {
                         text.setText(text.getText() + "[ERROR]");
                     }
@@ -162,6 +165,9 @@ public class Kinobuchungssystem {
         return filme.get(a);
     }
 
+    /**
+     * Made by Fabian Gysel
+     */
     public void zeigeAlleVorstellung() {
         JFrame popUp = new JFrame();
         JLabel text = new JLabel("<html>");
@@ -180,19 +186,19 @@ public class Kinobuchungssystem {
     }
 
     public void machReservierung(int reservierungsNr, String telefonNummer, Platz p) {
-        Reservierung lel = new Reservierung(reservierungsNr, telefonNummer, p);
-        res.add(lel);
+        Reservierung reservierung = new Reservierung(reservierungsNr, telefonNummer, p);
+        res.add(reservierung);
     }
 
     public void aendereReservierung(int reservierungsNr, String telefonNummer, Platz alt, Platz neu, int n) {
-        alt.freiePlatz();
+        alt.setPlatzToFrei();
         Reservierung lel = new Reservierung(reservierungsNr, telefonNummer, neu);
         res.set(n, lel);
 
     }
 
     public void storniereReservierung(Platz alt, int n) {
-        alt.freiePlatz();
+        alt.setPlatzToFrei();
         res.remove(n);
 
     }
@@ -200,10 +206,30 @@ public class Kinobuchungssystem {
     public int liefereBuchungNummer() {
         return naechsteBuchungsnummer;
     }
+    
+    public String[] getPlaetzeASarray() {
+        String[] plaetze = new String[32];
+        int i = 0;
+        for (Kinosaal saal : saele) {
+            for (Reihe reihe : saal.reihe) {
+                for (Platz platz : reihe.lieferePlätze()) {
+                    plaetze[i] = "Saal " + saal.getNummer() + "  |   Reihe " + reihe.reihenNr + "  |   Platz " + platz.platzNr;
+                    i++;
+                }
+            }
+        }
+        return plaetze;
+    }
 
-    public void kaufPlatz(Platz p) {
-        if (!p.istPlatzVerkauft()) {
-            p.verkaufePlatz();
+    public void kaufPlatz(Platz platz) {
+        if (!platz.istPlatzVerkauft()) {
+            platz.setPlatzToVerkauft();
+        } else {
+            JFrame popUp = new JFrame();
+            JLabel text = new JLabel("Platz ist nicht verfügbar");
+            popUp.add(text);
+            popUp.setVisible(true);
+            popUp.pack();
         }
 
     }
