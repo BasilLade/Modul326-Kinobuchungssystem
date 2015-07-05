@@ -37,11 +37,18 @@ public class NewJFrame extends javax.swing.JFrame {
         machReservierungButton = new javax.swing.JButton();
         storniereReservierungButton = new javax.swing.JButton();
         kaufPlatzButton = new javax.swing.JButton();
-        liefereBuchungNummerButton = new javax.swing.JButton();
         checkPlaetzeButton = new javax.swing.JButton();
         zeigeAlleVorstellungButton = new javax.swing.JButton();
         buyPlaceTakePlatz = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
+        telefonNummerField = new javax.swing.JTextField();
+        reservierPlaceTakePlatz = new javax.swing.JComboBox();
+        jLabel5 = new javax.swing.JLabel();
+        changeReservierungOldPlace = new javax.swing.JComboBox();
+        changeReservierungNewPlace = new javax.swing.JComboBox();
+        deleteReservierungTakeNumber = new javax.swing.JComboBox();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -67,7 +74,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
         movieDate.setText("Datum");
 
-        movieDauer.setText("Dauer");
+        movieDauer.setText("Zeit");
 
         movieSaal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2", "3", "4", "5", "6" }));
         movieSaal.addActionListener(new java.awt.event.ActionListener() {
@@ -99,13 +106,6 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
-        liefereBuchungNummerButton.setText("Buchungsnummern checken");
-        liefereBuchungNummerButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                liefereBuchungNummerButtonActionPerformed(evt);
-            }
-        });
-
         checkPlaetzeButton.setText("Plätze checken");
         checkPlaetzeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,34 +129,94 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jLabel3.setText("Platz: ");
 
+        telefonNummerField.setText("Telefonnummer");
+        telefonNummerField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                telefonNummerFieldActionPerformed(evt);
+            }
+        });
+
+        reservierPlaceTakePlatz.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2", "3", "4", "5", "6" }));
+        reservierPlaceTakePlatz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reservierPlaceTakePlatzActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Platz: ");
+
+        changeReservierungOldPlace.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2", "3", "4", "5", "6" }));
+        changeReservierungOldPlace.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                changeReservierungOldPlaceActionPerformed(evt);
+            }
+        });
+
+        changeReservierungNewPlace.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2", "3", "4", "5", "6" }));
+        changeReservierungNewPlace.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                changeReservierungNewPlaceActionPerformed(evt);
+            }
+        });
+
+        deleteReservierungTakeNumber.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2", "3", "4", "5", "6" }));
+        deleteReservierungTakeNumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteReservierungTakeNumberActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Telefonnummer:");
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setText("Kinobuchungssystem Modul 326");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16)
+                        .addComponent(buyPlaceTakePlatz, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(telefonNummerField, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(changeReservierungOldPlace, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(reservierPlaceTakePlatz, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(changeReservierungNewPlace, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(deleteReservierungTakeNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(movieName, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(9, 9, 9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(movieDate, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(movieDauer, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(movieSaal, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buyPlaceTakePlatz, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(zeigeAlleVorstellungButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(checkPlaetzeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(zeigeAlleVorstellungButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(filmMachenButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(storniereReservierungButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+                    .addComponent(storniereReservierungButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(aendereReservierungButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(machReservierungButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(liefereBuchungNummerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(kaufPlatzButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -164,30 +224,41 @@ public class NewJFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(checkPlaetzeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(zeigeAlleVorstellungButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(filmMachenButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(movieName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(movieDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(movieSaal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(movieDauer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(movieSaal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(movieDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(movieName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(checkPlaetzeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(machReservierungButton)
+                    .addComponent(telefonNummerField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(reservierPlaceTakePlatz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(zeigeAlleVorstellungButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(aendereReservierungButton)
+                    .addComponent(changeReservierungOldPlace, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(changeReservierungNewPlace, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(machReservierungButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(aendereReservierungButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(storniereReservierungButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(liefereBuchungNummerButton)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(storniereReservierungButton)
+                    .addComponent(deleteReservierungTakeNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(kaufPlatzButton)
                     .addComponent(buyPlaceTakePlatz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         pack();
@@ -213,10 +284,6 @@ public class NewJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_aendereReservierungButtonActionPerformed
 
-    private void liefereBuchungNummerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_liefereBuchungNummerButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_liefereBuchungNummerButtonActionPerformed
-
     private void checkPlaetzeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPlaetzeButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_checkPlaetzeButtonActionPerformed
@@ -228,6 +295,26 @@ public class NewJFrame extends javax.swing.JFrame {
     private void buyPlaceTakePlatzActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyPlaceTakePlatzActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_buyPlaceTakePlatzActionPerformed
+
+    private void telefonNummerFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telefonNummerFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_telefonNummerFieldActionPerformed
+
+    private void reservierPlaceTakePlatzActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reservierPlaceTakePlatzActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_reservierPlaceTakePlatzActionPerformed
+
+    private void changeReservierungOldPlaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeReservierungOldPlaceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_changeReservierungOldPlaceActionPerformed
+
+    private void changeReservierungNewPlaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeReservierungNewPlaceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_changeReservierungNewPlaceActionPerformed
+
+    private void deleteReservierungTakeNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteReservierungTakeNumberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteReservierungTakeNumberActionPerformed
    
     /**
      * @param args the command line arguments
@@ -267,19 +354,26 @@ public class NewJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton aendereReservierungButton;
     private javax.swing.JComboBox buyPlaceTakePlatz;
+    private javax.swing.JComboBox changeReservierungNewPlace;
+    private javax.swing.JComboBox changeReservierungOldPlace;
     private javax.swing.JButton checkPlaetzeButton;
+    private javax.swing.JComboBox deleteReservierungTakeNumber;
     private javax.swing.JButton filmMachenButton;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JButton kaufPlatzButton;
-    private javax.swing.JButton liefereBuchungNummerButton;
     private javax.swing.JButton machReservierungButton;
     private javax.swing.JTextField movieDate;
     private javax.swing.JTextField movieDauer;
     private javax.swing.JTextField movieName;
     private javax.swing.JComboBox movieSaal;
+    private javax.swing.JComboBox reservierPlaceTakePlatz;
     private javax.swing.JButton storniereReservierungButton;
+    private javax.swing.JTextField telefonNummerField;
     private javax.swing.JButton zeigeAlleVorstellungButton;
     // End of variables declaration//GEN-END:variables
 }

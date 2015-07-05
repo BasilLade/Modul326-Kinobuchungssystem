@@ -22,8 +22,8 @@ public class Kinobuchungssystem {
         filmMachen("Ted", "11.2.2012", "94:11", saele.get(0));
         filmMachen("Poltergeist der Neue ;)", "5.5.2015", "77:33", saele.get(1));
 
-        machReservierung(1, "078 790 23 77", saele.get(0).reihe.get(0).platz.get(0));
-        machReservierung(2, "078 790 23 74", saele.get(0).reihe.get(2).platz.get(3));
+        machReservierung("078 790 23 77", saele.get(0).reihe.get(0).platz.get(0));
+        machReservierung("078 790 23 74", saele.get(0).reihe.get(2).platz.get(3));
 
         kaufPlatz(saele.get(0).reihe.get(1).platz.get(2));
         kaufPlatz(saele.get(0).reihe.get(3).platz.get(0));
@@ -126,7 +126,7 @@ public class Kinobuchungssystem {
     }
 
     /**
-     *  Made by Fabian Gysel
+     * Made by Fabian Gysel
      */
     public void checkPlaetze() {
         JFrame popUp = new JFrame();
@@ -137,11 +137,11 @@ public class Kinobuchungssystem {
                 text.setText(text.getText() + reihe.reihenNr + ": ");
                 for (Platz platz : reihe.lieferePlätze()) {
                     if (platz.istPlatzFrei()) {
-                        text.setText(text.getText() + "<font color='green'>["+platz.getPlatzNRWithNull()+"]</font>");
+                        text.setText(text.getText() + "<font color='green'>[" + platz.getPlatzNRWithNull() + "]</font>");
                     } else if (platz.istPlatzReserviert()) {
-                        text.setText(text.getText() + "<font color='orange'>["+platz.getPlatzNRWithNull()+"]</font>");
+                        text.setText(text.getText() + "<font color='orange'>[" + platz.getPlatzNRWithNull() + "]</font>");
                     } else if (platz.istPlatzVerkauft()) {
-                        text.setText(text.getText() + "<font color='red'>["+platz.getPlatzNRWithNull()+"]</font>");
+                        text.setText(text.getText() + "<font color='red'>[" + platz.getPlatzNRWithNull() + "]</font>");
                     } else {
                         text.setText(text.getText() + "[ERROR]");
                     }
@@ -185,15 +185,15 @@ public class Kinobuchungssystem {
         popUp.pack();
     }
 
-    public void machReservierung(int reservierungsNr, String telefonNummer, Platz p) {
-        Reservierung reservierung = new Reservierung(reservierungsNr, telefonNummer, p);
+    public void machReservierung(String telefonNummer, Platz p) {
+        Reservierung reservierung = new Reservierung(telefonNummer, p);
         res.add(reservierung);
     }
 
-    public void aendereReservierung(int reservierungsNr, String telefonNummer, Platz alt, Platz neu, int n) {
+    public void aendereReservierung(String telefonNummer, Platz alt, Platz neu, int n) {
         alt.setPlatzToFrei();
-        Reservierung lel = new Reservierung(reservierungsNr, telefonNummer, neu);
-        res.set(n, lel);
+        Reservierung neueReservierung = new Reservierung(telefonNummer, neu);
+        res.set(n, neueReservierung);
 
     }
 
@@ -206,7 +206,7 @@ public class Kinobuchungssystem {
     public int liefereBuchungNummer() {
         return naechsteBuchungsnummer;
     }
-    
+
     public String[] getPlaetzeASarray() {
         String[] plaetze = new String[32];
         int i = 0;
@@ -234,4 +234,15 @@ public class Kinobuchungssystem {
 
     }
 
+    public String[] getReservierungenASarray() {
+                String[] reservierungen = new String[32];
+        int i = 0;
+        for (Reservierung reservierung : res) {
+            
+                    reservierungen[i] = "Reservierung " + reservierung.telefonNummer;
+                    i++;
+        }
+        return reservierungen;
+    }
+    
 }
