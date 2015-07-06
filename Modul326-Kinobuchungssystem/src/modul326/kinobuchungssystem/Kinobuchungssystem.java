@@ -139,7 +139,7 @@ public class Kinobuchungssystem {
                     if (platz.istPlatzFrei()) {
                         text.setText(text.getText() + "<font color='green'>[" + platz.getPlatzNRWithNull() + "]</font>");
                     } else if (platz.istPlatzReserviert()) {
-                        text.setText(text.getText() + "<font color='orange'>[" + platz.getPlatzNRWithNull() + "]</font>");
+                        text.setText(text.getText() + "<font color='blue'>[" + platz.getPlatzNRWithNull() + "]</font>");
                     } else if (platz.istPlatzVerkauft()) {
                         text.setText(text.getText() + "<font color='red'>[" + platz.getPlatzNRWithNull() + "]</font>");
                     } else {
@@ -150,6 +150,9 @@ public class Kinobuchungssystem {
             }
             text.setText(text.getText() + "<br>");
         }
+        text.setText(text.getText() + "<font color='green'>[??] Freier Platz</font><br>");
+        text.setText(text.getText() + "<font color='blue'>[??] Reservierter Platz</font><br>");
+        text.setText(text.getText() + "<font color='red'>[??] Besetzter Platz</font><br>");
         text.setText(text.getText() + "</html>");
         popUp.add(text);
         popUp.setVisible(true);
@@ -213,7 +216,29 @@ public class Kinobuchungssystem {
         for (Kinosaal saal : saele) {
             for (Reihe reihe : saal.reihe) {
                 for (Platz platz : reihe.lieferePlätze()) {
-                    plaetze[i] = "Saal " + saal.getNummer() + "  |   Reihe " + reihe.reihenNr + "  |   Platz " + platz.platzNr;
+
+                    int saalNummer = Integer.parseInt(saal.getNummer());
+                    int reiheNummer = reihe.reihenNr;
+                    int platzNummer = platz.platzNr;
+                    
+                    if (saalNummer == 2) {
+                        reiheNummer = reiheNummer - 4;
+                        platzNummer = platzNummer - 16;
+                    }
+                    if (reiheNummer == 2) {
+                        platzNummer = platzNummer - 4;
+                    } else if (reiheNummer == 3) {
+                        platzNummer = platzNummer - 8;
+                    } else if (reiheNummer == 4) {
+                        platzNummer = platzNummer - 12;
+                    }
+                    if(platz.istPlatzFrei()) {
+                        plaetze[i] = "<html>-"+platz.platzNr+"-<font color='green'>Saal " + saalNummer + "  |   Reihe " + reiheNummer + "  |   Platz " + platzNummer + "</font></html>";
+                    } else if(platz.istPlatzReserviert()) {
+                        plaetze[i] = "<html>-"+platz.platzNr+"-<font color='blue'>Saal " + saalNummer + "  |   Reihe " + reiheNummer + "  |   Platz " + platzNummer + "</font></html>";
+                    } else if(platz.istPlatzVerkauft()) {
+                        plaetze[i] = "<html>-"+platz.platzNr+"-<font color='red'>Saal " + saalNummer + "  |   Reihe " + reiheNummer + "  |   Platz " + platzNummer + "</font></html>";
+                    }
                     i++;
                 }
             }
@@ -235,14 +260,14 @@ public class Kinobuchungssystem {
     }
 
     public String[] getReservierungenASarray() {
-                String[] reservierungen = new String[32];
+        String[] reservierungen = new String[32];
         int i = 0;
         for (Reservierung reservierung : res) {
-            
-                    reservierungen[i] = "Reservierung " + reservierung.telefonNummer;
-                    i++;
+
+            reservierungen[i] = "Reservierung " + reservierung.telefonNummer;
+            i++;
         }
         return reservierungen;
     }
-    
+
 }
