@@ -200,9 +200,8 @@ public class Kinobuchungssystem {
 
     }
 
-    public void storniereReservierung(Platz alt, int n) {
+    public void storniereReservierung(Platz alt) {
         alt.setPlatzToFrei();
-        res.remove(n);
 
     }
 

@@ -1,6 +1,7 @@
 package modul326.kinobuchungssystem;
 
 import java.awt.event.ActionEvent;
+import javax.swing.ComboBoxModel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -179,7 +180,7 @@ public class gui extends javax.swing.JFrame {
             }
         });
 
-        deleteReservierungTakeNumber.setModel(new javax.swing.DefaultComboBoxModel(k.getReservierungenASarray()));
+        deleteReservierungTakeNumber.setModel(new javax.swing.DefaultComboBoxModel(k.getPlaetzeASarray()));
         deleteReservierungTakeNumber.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -298,42 +299,23 @@ public class gui extends javax.swing.JFrame {
 
     private void kaufPlatzButtonActionPerformed(java.awt.event.ActionEvent evt) {
         String workWith = (String) buyPlaceTakePlatz.getSelectedItem();
-        int get = getSelectedPlace(workWith);
-       // k.kaufPlatz(k.saele.get(0).reihe.get(0).platz.get(getSelectedPlace(workWith) - 1));
+        k.kaufPlatz(getSelectedPlace(workWith));
     }
 
-    private int getSelectedPlace(String workWith) {
-        
-        
-        
+    private Platz getSelectedPlace(String workWith) {
         String[] parts = workWith.split("-");
         int platzNr = Integer.parseInt(parts[1]);
-        
-        
-        
         int longPlatz = platzNr;
-        
         int longReihe = Math.round((longPlatz - 1) / 4);
-        
         int longSaal = Math.round(longReihe / 4);
-        
         int kurzReihe = longReihe - (longSaal * 4);
-        
         int kurzPlatz = longPlatz - (longReihe * 4); 
-        
-        System.out.println(longPlatz);
-        System.out.println(longReihe);
-        System.out.println(longSaal);
-        System.out.println(kurzPlatz);
-        System.out.println(kurzReihe);
-        
-        
-        return platzNr;
+        return k.saele.get(longSaal).reihe.get(kurzReihe).platz.get(kurzPlatz-1);
     }
 
     private void machReservierungButtonActionPerformed(java.awt.event.ActionEvent evt) {
         String workWith = (String) reservierPlaceTakePlatz.getSelectedItem();
-        k.machReservierung(telefonNummerField.getText(), k.saele.get(0).reihe.get(0).platz.get(getSelectedPlace(workWith) - 1));
+        k.machReservierung(telefonNummerField.getText(), getSelectedPlace(workWith));
     }
 
     private void telefonNummerFieldActionPerformed(ActionEvent evt) {
@@ -372,9 +354,15 @@ public class gui extends javax.swing.JFrame {
         // TODO add your handling code here:
     }                                                          
 
-    private void deleteReservierungTakeNumberActionPerformed(java.awt.event.ActionEvent evt) {                                                             
-        // TODO add your handling code here:
+    private void deleteReservierungTakeNumberActionPerformed(java.awt.event.ActionEvent evt) {          
+      
     }         
+    
+    
+    private void storniereReservierungButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                            
+   String workWith = (String) deleteReservierungTakeNumber.getSelectedItem();
+      k.storniereReservierung(getSelectedPlace(workWith));
+    }                  
     
     // Variables declaration - do not modify                     
     private javax.swing.JButton aendereReservierungButton;

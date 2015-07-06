@@ -98,6 +98,11 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         storniereReservierungButton.setText("Reservierung löschen");
+        storniereReservierungButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                storniereReservierungButtonActionPerformed(evt);
+            }
+        });
 
         kaufPlatzButton.setText("Platz kaufen");
         kaufPlatzButton.addActionListener(new java.awt.event.ActionListener() {
@@ -315,6 +320,10 @@ public class NewJFrame extends javax.swing.JFrame {
     private void deleteReservierungTakeNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteReservierungTakeNumberActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_deleteReservierungTakeNumberActionPerformed
+
+    private void storniereReservierungButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_storniereReservierungButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_storniereReservierungButtonActionPerformed
    
     /**
      * @param args the command line arguments
